@@ -32,35 +32,26 @@ Add quickly a registration and authentication system to your [FastAPI](https://f
 
 ### Setup environment
 
-You should create a virtual environment and activate it:
+[Hatch](https://hatch.pypa.io/1.12/) is a project management tool used for environments and dependencies.
 
+Install needed dependencies:
 ```bash
-python -m venv venv/
+hatch run pip install -e .
 ```
 
+Get more information about [Hatch](https://hatch.pypa.io/1.12/):
 ```bash
-source venv/bin/activate
-```
-
-And then install the development dependencies:
-
-```bash
-pip install -r requirements.dev.txt
+hatch --help
 ```
 
 ### Run unit tests
 
-You can run all the tests with:
+To run all unit tests for the project execute:
 
 ```bash
-make test
+hatch run test
 ```
 
-Alternatively, you can run `pytest` yourself:
-
-```bash
-pytest
-```
 
 There are quite a few unit tests, so you might run into ulimit issues where there are too many open file descriptors. You may be able to set a new, higher limit temporarily with:
 
@@ -73,7 +64,7 @@ ulimit -n 2048
 Execute the following command to apply `isort` and `black` formatting:
 
 ```bash
-make format
+hatch run lint
 ```
 
 ## License
